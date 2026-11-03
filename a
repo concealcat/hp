@@ -1,0 +1,35 @@
+#define NULL ((char *)0)
+extern oph, opq, opv;
+
+main(c, v)
+char **v;
+{
+ auto i, j;
+ for(i = 1; v[i] != NULL; ++i) {
+  j = 1;
+  if(v[i][0] == '-') {
+   do {
+    switch((int)v[i][j]) {
+     case NULL:
+      break;
+     case 'h':
+      ++oph;
+      break;
+     case 'q':
+      ++opq;
+      break;
+     case 'v':
+      ++opv;
+      break;
+     default:
+      ;
+    }
+   } while(v[i][++j] != NULL);
+  }
+ }
+
+ return(0);
+}
+
+oph, opq, opv;
+
